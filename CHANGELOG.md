@@ -1,5 +1,11 @@
 # manifold
 
+## 0.3.0
+
+### Minor Changes
+
+- 1492114: Rename for collision in npm registry :/
+
 ## 0.2.0
 
 ### Minor Changes
