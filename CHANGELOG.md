@@ -1,5 +1,11 @@
 # manifold
 
+## 0.3.2
+
+### Patch Changes
+
+- 71f59aa: tweaks to get publish work and trigger ci run
+
 ## 0.3.1
 
 ### Patch Changes
