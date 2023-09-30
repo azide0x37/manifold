@@ -16,6 +16,6 @@ export interface ManifoldEvent {
   name: string;
   start: SpaceTime
   end: SpaceTime;
-  description: string;
+  description?: string;
   referenceFrames: ReferenceFrame[];
 }

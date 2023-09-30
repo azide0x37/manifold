@@ -6,6 +6,6 @@ export interface ReferenceFrame {
   id: string;
   ownerId: string;
   name: string;
-  description: string;
+  description?: string;
   events: ManifoldEvent[];
 }
