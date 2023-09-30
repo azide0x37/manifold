@@ -49,9 +49,11 @@ export const importICal = (worldLine: WorldLine, iCalString: string): void => {
     const vcalendar = new ICAL.Component(iCalCalendar);
     const vevents = vcalendar.getAllSubcomponents('vevent') as unknown as ICalEventProperties[];
 
-    const categories: string[][] = vevents.map(vevent => {
-      return vevent.getAllProperties('categories').map(category => category.getFirstValue());
-    });
+    const categories: string[] = vevents.map((vevent: ICalEventProperties) => {
+      const categories = vevent.getAllProperties('categories') as unknown as ICalEventCategory[];
+      return categories.map(category => category.getFirstValue());
+    }
+    ).flat();
 
     const manifoldEvents: ManifoldEventFromICal[] = vevents.map((vevent: ICalEventProperties) => ({
       id: ICAL.uuid(),
@@ -63,14 +65,18 @@ export const importICal = (worldLine: WorldLine, iCalString: string): void => {
       category: vevent.getAllProperties('categories').map(category => category.getFirstValue()),
     }) as ManifoldEventFromICal);
 
-    const referenceFrames: ReferenceFrame[] = categories.flat().map(category => {
-      return worldLine.referenceFrames.find(rf => rf.name === category) || {
+    const referenceFrames: ReferenceFrame[] = categories.map((category: string) => {
+      return {
         id: ICAL.uuid(),
-        ownerId: worldLine.userId,
+        ownerId: '',
         name: category,
+        description: '',
+        color: '#000000',
         events: [],
       };
-    });
+    }
+    );
+
 
     worldLine.referenceFrames.push(...referenceFrames);
 
