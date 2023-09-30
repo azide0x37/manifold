@@ -1,6 +1,8 @@
 # Manifold 🌀
 
 ## Elevate Your Calendar with the Fourth Dimension!
+[![CI](https://github.com/azide0x37/manifold/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/azide0x37/manifold/actions/workflows/main.yml)
+[![Publish](https://github.com/azide0x37/manifold/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/azide0x37/manifold/actions/workflows/publish.yml)
 
 **Manifold** is not just another calendar library—it's the missing link between your 3D world and the 4th dimension of time. Leverage the power of iCal standards and cutting-edge spatial algorithms to craft multidimensional experiences in scheduling, project management, and beyond.
 
