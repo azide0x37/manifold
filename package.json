@@ -9,7 +9,8 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "test": "jest --watch",
     "lint": "tsc",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "publish": "changeset publish"
   },
   "repository": {
     "type": "git",
